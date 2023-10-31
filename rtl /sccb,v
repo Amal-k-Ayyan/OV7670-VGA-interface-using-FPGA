@@ -1,5 +1,18 @@
 /*NOTE: If we use pullup resistors for SCL and SDL, then SCL and SDL data must be inverted.*/
 
+/* SIOD: It is an inout port. Since it only gives output to camera it can be configured as output port also.
+    Data transmission through it must be synchronized with sioc.
+
+   Module accepts camera address, 8-bit data (register configuration data) and 8-bit sub-address (register address)
+   from FPGA and sent it serially through siod line to configure the camera registers.
+
+   SIOC: Each bit of data sent to slave is sampled at each cycle of SCL. Therefore, SIOD must be synchronized with SIOC.
+
+   Done: Ticks after each data byte is sent.
+
+   Ready: Made High when all the 3 data bytes are sent.
+*/
+
 
 module sccb
 
