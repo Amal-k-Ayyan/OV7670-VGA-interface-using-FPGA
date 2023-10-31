@@ -1,13 +1,13 @@
 
-/* BRAM is used to store data temperorly until it 
-   is read.
+/* Frame_buffer is to store the image data before sending it to the VGA controller. 
+The frame buffer should manage the storage and retrieval of pixel data for each frame.
 
    It has 640*480 rows. Each row is of 12-bit.
    
    Infer dual-port BRAM with dual clocks:
     https://docs.xilinx.com/v/u/2019.2-English/ug901-vivado-synthesis (page 126)*/
    
-module bram 
+module frame_buffer 
  (
     input wire rd_clk,
     input wire rd_en,
