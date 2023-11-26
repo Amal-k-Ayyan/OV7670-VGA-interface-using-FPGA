@@ -1,5 +1,5 @@
 /* --To configure the OVA7670. It instantiates  
-      SCCB, cam_rom and rom_to_sccb modules.
+      cam_rom, rom_to_sccb and sccb modules .
 
    --
 */
